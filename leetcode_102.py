@@ -4,6 +4,9 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+'''
+Basic way of using BFS and using each level in the queue and appending to the lst
+'''
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         def func(root):
@@ -28,6 +31,9 @@ class Solution:
     
 
 # OR
+'''
+Use of a variable val to keep track of the depth and then later using the hashmap to create the res
+'''
 
 class Solution(object):
     def levelOrder(self, root):
