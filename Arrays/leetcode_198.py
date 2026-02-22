@@ -3,9 +3,8 @@ so generally modifying the input is not recommended but i did this to effecientl
 solve the problem could use a dp array and populate the results.
 then used the max resultof the nums in the previous places since the array elements were 
 positive there cannot be a gap of more than 2 elements to get maximum result.
-and the result could be last or last second element since we can go alternate or 2 places
+and the result could be last or last second element since we can hop alternate or 2 places
 '''
-
 class Solution:
     def rob(self, nums: List[int]) -> int:
         if len(nums) == 1:
