@@ -34,3 +34,31 @@ class Solution:
             cur.right = func(right+1, in_lookup[cur.val]+1, right_num)
             return cur
         return func(0, 0, len(inorder)-1)
+    
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        pre_lookup = {}
+        in_lookup = {}
+        for i in range(len(preorder)):
+            pre_lookup[preorder[i]] = i
+            in_lookup[inorder[i]] = i
+        def func(ele, left_num, right_num):
+            print(ele,left_num, right_num)
+            if ele >= len(inorder) or left_num > right_num:
+                return None
+            cur = TreeNode()
+            cur.val = preorder[ele]
+            right = ele
+            for i in range(left_num, in_lookup[cur.val]):
+                right = max(right, pre_lookup[inorder[i]])
+            cur.left = func(ele+1, left_num, in_lookup[cur.val] - 1)
+            cur.right = func(right+1, in_lookup[cur.val]+1, right_num)
+            return cur
+        return func(0, 0, len(inorder)-1)
