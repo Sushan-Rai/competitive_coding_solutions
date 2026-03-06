@@ -5,9 +5,6 @@
 ### Commits per Topic
 ![Commit Graph](commit_graph.png)
 
-### Problem Distribution
-![Problem Graph](problem_distribution.png)
-
 ---
 
 ## Commit Activity
